@@ -1,6 +1,12 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
+
+// EJS
+app.use(expressLayouts); // make this line is on top of line 8 or layouts wont work
+app.set('view engine', 'ejs');
+
 
 // Routes
 app.use('/', require('./routes/index'));
